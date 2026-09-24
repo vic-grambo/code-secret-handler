@@ -1,0 +1,54 @@
+{
+  "name": "code-secret-handler",
+  "version": "1.0.0",
+  "description": "A language-agnostic CLI tool that scans codebases for hardcoded secrets, moves them to .env files, and rewrites source files with proper env-var references.",
+  "main": "dist/cli.js",
+  "bin": {
+    "code-secret-handler": "./dist/cli.js",
+    "csh": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/cli.ts",
+    "dev": "tsx src/cli.ts",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-vic:vic-grambo/code-secret-handler.git"
+  },
+  "keywords": [
+    "security",
+    "secrets",
+    "scanner",
+    "hardcoded",
+    "env",
+    "dotenv",
+    "cli",
+    "devops"
+  ],
+  "author": "Vic <vic.grambo@gmail.com>",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "commonjs",
+  "dependencies": {
+    "chalk": "^6.0.0",
+    "commander": "^15.0.0",
+    "fast-glob": "^3.3.3",
+    "ignore": "^7.0.10",
+    "inquirer": "^14.2.2",
+    "ora": "^9.4.1"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/inquirer": "^9.0.10",
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

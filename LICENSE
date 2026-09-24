@@ -1,0 +1,79 @@
+Copyright (c) 2024 Vic (vic.grambo@gmail.com)
+
+PolyForm Noncommercial License 1.0.0
+
+Acceptance
+
+In order to get any license under these terms, you must agree to them as both strict obligations and conditions to all your licenses.
+
+Use Grant
+
+The licensor grants you a non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable license to use, copy, distribute, make available, and prepare derivative works of the software, in each case for your personal and noncommercial purposes only.
+
+Noncommercial Purposes
+
+Any of the following uses of the software counts as a noncommercial purpose:
+
+  * Personal research, study, learning, private entertainment, or hobby projects without any anticipated commercial application.
+  * Use by a charitable organization, educational institution, public research organization, public safety or health organization, environmental protection organization, or government institution.
+
+Commercial Use Reserved
+
+Any use of the software to directly or indirectly generate revenue, reduce costs, or obtain a commercial advantage for a business, company, organization, or for-profit entity requires a separate commercial license granted in writing by the licensor.
+
+This includes, but is not limited to:
+  * Use within a company, startup, agency, or any for-profit organization.
+  * Running the tool as part of an automated CI/CD pipeline in a commercial context.
+  * Offering services built on or using this tool to paying customers.
+  * Any use by a GitHub Organization, GitLab Group, or equivalent entity.
+
+Commercial Licensing
+
+To obtain a commercial license, please contact:
+
+  Vic — vic.grambo@gmail.com
+
+Commercial licensees will receive a license key to be set as:
+  CSH_LICENSE_KEY=<your-key>
+
+Notices
+
+You must ensure that anyone who gets a copy of any part of the software from you also gets a copy of these terms or the URL for them above, as well as copies of any plain-text lines beginning with "Required Notice:" that the licensor provides with the software.
+
+No Other Rights
+
+These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else.
+
+Patent Defense
+
+If you make any written claim that the software infringes or contributes to infringement of any patent, your license for the software granted under these terms ends immediately. If your company makes such a claim, your license ends immediately for work on behalf of your company.
+
+Violations
+
+The first time you are notified in writing that you have violated any of these terms, your license can nonetheless continue if you come into full compliance with these terms within 30 days of receiving that notice. If any violation of these terms is willful, the 30-day cure period above does not apply.
+
+No Liability
+
+As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim.
+
+Telemetry Disclosure
+
+This software collects anonymous usage telemetry to assist with license compliance monitoring. The following data is collected when the tool is run:
+
+  * Tool version, operating system, and Node.js version
+  * Git remote URL, repository owner, and repository name
+  * Git platform (GitHub, GitLab, Bitbucket, or other)
+  * Whether the repository owner is an Organization or personal User
+  * Whether a commercial license key was provided
+  * Timestamp of the run
+
+No source code, file contents, secret values, or personally identifiable information is ever collected.
+
+To opt out of telemetry collection, set the following environment variable:
+  CSH_TELEMETRY=0
+
+Definitions
+
+"The licensor" refers to Vic (vic.grambo@gmail.com), the individual who makes the software available under these terms.
+
+"The software" refers to the code-secret-handler CLI tool and all associated source code, binaries, and documentation made available under this license.

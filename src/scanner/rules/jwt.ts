@@ -1,0 +1,95 @@
+import { Rule } from '../../types';
+
+/**
+ * JWT and authentication secret patterns.
+ */
+export const jwtRules: Rule[] = [
+  {
+    id: 'jwt-secret',
+    description: 'JWT signing secret',
+    pattern: /(?:jwt[_-]?secret(?:[_-]?key)?|JWT_SECRET(?:_KEY)?)\s*[:=]\s*['"\`]([^'"\`\n]{8,})['"\`]/i,
+    valueGroup: 1,
+    envKeyPrefix: 'JWT_SECRET',
+    severity: 'critical',
+  },
+  {
+    id: 'jwt-private-key',
+    description: 'JWT private key (RS256/ES256)',
+    pattern: /(?:jwt[_-]?private[_-]?key|JWT_PRIVATE_KEY)\s*[:=]\s*['"\`]([^'"\`\n]{16,})['"\`]/i,
+    valueGroup: 1,
+    envKeyPrefix: 'JWT_PRIVATE_KEY',
+    severity: 'critical',
+  },
+  {
+    id: 'jwt-public-key',
+    description: 'JWT public key',
+    pattern: /(?:jwt[_-]?public[_-]?key|JWT_PUBLIC_KEY)\s*[:=]\s*['"\`]([^'"\`\n]{16,})['"\`]/i,
+    valueGroup: 1,
+    envKeyPrefix: 'JWT_PUBLIC_KEY',
+    severity: 'medium',
+  },
+  {
+    id: 'jwt-token-literal',
+    description: 'Hardcoded JWT token (three base64url parts)',
+    pattern: /['"\`](eyJ[A-Za-z0-9\-_]+\.eyJ[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_.+/=]+)['"\`]/,
+    valueGroup: 1,
+    envKeyPrefix: 'JWT_TOKEN',
+    severity: 'critical',
+  },
+  {
+    id: 'session-secret',
+    description: 'Express/web framework session secret',
+    pattern: /(?:session[_-]?secret|SESSION_SECRET|cookie[_-]?secret|COOKIE_SECRET)\s*[:=]\s*['"\`]([^'"\`\n]{8,})['"\`]/i,
+    valueGroup: 1,
+    envKeyPrefix: 'SESSION_SECRET',
+    severity: 'critical',
+  },
+  {
+    id: 'nextauth-secret',
+    description: 'NextAuth.js / Auth.js secret',
+    pattern: /(?:NEXTAUTH_SECRET|AUTH_SECRET)\s*[:=]\s*['"\`]([^'"\`\n]{8,})['"\`]/i,
+    valueGroup: 1,
+    envKeyPrefix: 'NEXTAUTH_SECRET',
+    severity: 'critical',
+  },
+  {
+    id: 'oauth2-token',
+    description: 'OAuth2 access or refresh token assignment',
+    pattern: /(?:oauth2?[_-]?(?:access[_-]?|refresh[_-]?)?token|OAUTH_TOKEN|OAUTH2_TOKEN)\s*[:=]\s*['"\`]([A-Za-z0-9\-_.~+/=]{20,})['"\`]/i,
+    valueGroup: 1,
+    envKeyPrefix: 'OAUTH_TOKEN',
+    severity: 'critical',
+  },
+  {
+    id: 'csrf-secret',
+    description: 'CSRF secret or token secret',
+    pattern: /(?:csrf[_-]?secret|csrf[_-]?token[_-]?secret|CSRF_SECRET)\s*[:=]\s*['"\`]([^'"\`\n]{8,})['"\`]/i,
+    valueGroup: 1,
+    envKeyPrefix: 'CSRF_SECRET',
+    severity: 'high',
+  },
+  {
+    id: 'flask-secret-key',
+    description: 'Flask SECRET_KEY assignment',
+    pattern: /(?:SECRET_KEY|app\.secret_key|app\.config\[.SECRET_KEY.\])\s*[:=]\s*['"\`]([^'"\`\n]{8,})['"\`]/,
+    valueGroup: 1,
+    envKeyPrefix: 'FLASK_SECRET_KEY',
+    severity: 'critical',
+  },
+  {
+    id: 'rails-secret-key-base',
+    description: 'Rails secret_key_base',
+    pattern: /(?:secret_key_base|SECRET_KEY_BASE)\s*[:=]\s*['"\`]([a-f0-9]{128,})['"\`]/i,
+    valueGroup: 1,
+    envKeyPrefix: 'SECRET_KEY_BASE',
+    severity: 'critical',
+  },
+  {
+    id: 'api-auth-token',
+    description: 'API authentication token header value',
+    pattern: /(?:x[_-]?api[_-]?(?:key|token)|x[_-]?auth[_-]?token|X_API_KEY|X_AUTH_TOKEN)\s*[:=]\s*['"\`]([A-Za-z0-9\-_.~+/=]{16,})['"\`]/i,
+    valueGroup: 1,
+    envKeyPrefix: 'API_AUTH_TOKEN',
+    severity: 'critical',
+  },
+];

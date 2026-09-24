@@ -1,0 +1,12 @@
+app:
+  name: MyApp
+  env: production
+
+database:
+  url: postgres://user:dbpassword789@db.prod.com:5432/mydb
+
+redis:
+  url: redis://:redispassword!@cache.prod.com:6379
+
+slack:
+  webhook_url: 'https://hooks.slack.com/services/TABCDEF123/BABCDEF456/xxxx-fake-not-real-xxxx' # fake webhook for testing
